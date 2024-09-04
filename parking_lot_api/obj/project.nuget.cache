@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "0ZKr53bFAmNmIxm1dWD8GEBnZ/3w4feSDnA7S9aV/LiDYezYme6DqM0/oc7S/4e+E1mfAUsFaBBwMGLMQIBfqw==",
+  "success": true,
+  "projectFilePath": "/home/cus/C/berkley-assessment/parking_lot_api/parking_lot_api.csproj",
+  "expectedPackageFiles": [
+    "/home/cus/.nuget/packages/microsoft.extensions.apidescription.server/6.0.5/microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "/home/cus/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",
+    "/home/cus/.nuget/packages/swashbuckle.aspnetcore/6.4.0/swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
+    "/home/cus/.nuget/packages/swashbuckle.aspnetcore.swagger/6.4.0/swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
+    "/home/cus/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.4.0/swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",
+    "/home/cus/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.4.0/swashbuckle.aspnetcore.swaggerui.6.4.0.nupkg.sha512"
+  ],
+  "logs": []
+}
