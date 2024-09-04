@@ -30,3 +30,4 @@
 /home/cus/C/berkley-assessment/parking_lot_api/obj/Debug/net8.0/parking_lot_api.pdb
 /home/cus/C/berkley-assessment/parking_lot_api/obj/Debug/net8.0/parking_lot_api.genruntimeconfig.cache
 /home/cus/C/berkley-assessment/parking_lot_api/obj/Debug/net8.0/ref/parking_lot_api.dll
+/home/cus/C/berkley-assessment/parking_lot_api/obj/Debug/net8.0/parking_lot_api.sourcelink.json

@@ -12,3 +12,4 @@
 /home/cus/C/berkley-assessment/src/obj/Debug/net8.0/ParkingLot.pdb
 /home/cus/C/berkley-assessment/src/obj/Debug/net8.0/ParkingLot.genruntimeconfig.cache
 /home/cus/C/berkley-assessment/src/obj/Debug/net8.0/ref/ParkingLot.dll
+/home/cus/C/berkley-assessment/src/obj/Debug/net8.0/ParkingLot.sourcelink.json
