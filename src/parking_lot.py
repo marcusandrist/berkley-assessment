@@ -12,7 +12,7 @@ VEHICLE_TYPES = {"Compact": Compact,
 class ParkingLot:
 
 	# Assume if vehicles are in the lot, they paid
-	def __init__(self, maximum_capacity: int, vehicles: list=[]):
+	def __init__(self, maximum_capacity: int, vehicles: dict={}):
 		self.maximum_capacity = maximum_capacity
 		self.vehicles = vehicles
 		self.revenue = RevenueTracker(WHEEL_PRICE, VEHICLE_TYPES)
@@ -21,29 +21,38 @@ class ParkingLot:
 	def __getitem__(self, total_vehicles) -> bool:
 		return total_vehicles < self.maximum_capacity
 
-	def describe_parking_lot(self) -> int:
-		return self.maximum_capacity
-
-	# Could be implemented much better with a db/json/sqlite
-	def park_vehicle(self, vehicle):
+	# Would implement with a sqlite or db w/ ACID-compliance in prod
+	def park_vehicle(self, vehicle_type):
 		# Check that vehicle type and parking space exists
-		if vehicle not in VEHICLE_TYPES.keys():
-			raise KeyError(f"Vehicle Type: {vehicle} not found")
+		if vehicle_type not in VEHICLE_TYPES.keys():
+			raise KeyError(f"Vehicle Type: {vehicle_type} not found")
 		if not self[len(self.vehicles.values())]:
 			raise RuntimeError("Parking lot is full")
-		# Store payment i+ add vehicle to parking lot at AUTO-INCREMENT
-		self.revenue.pay(vehicle)
+		# Add vehicle to parking lot at AUTO-INCREMENT
 		new_id = max(self.vehicles.keys(), default = 0) + 4
-		self.vehicles.update({new_id: vehicle})
+		# Create vehicle, pay for parking, and add to parking lot
+		new_vehicle = VEHICLE_TYPES[vehicle_type](new_id)
+		self.revenue.pay(new_vehicle)
+		self.vehicles.update({new_id: new_vehicle})
 
 	def unpark_vehicle(self, vehicle_id):
 		try:
 			vehicle = self.vehicles.pop(vehicle_id)
 		except KeyError as e:
-			print(f"Vehicle ID: {vehicle_id} not found")
+			return (f"Vehicle ID: {vehicle_id} not found")
 
-		return vehicle
+	def list_vehicles(self):
+		vehicle_list = []
+		for vehicle in self.vehicles.values():
+			vehicle_list.append(vehicle)
+		return vehicle_list
 
-	def __repr__(self):
-		return f"0/{self.maximum_capacity} vehicles in the lot\n\
-				e"
+	def list_vehicles_by_type(self):
+		vehicle_list = self.list_vehicles()
+		sorted_vehicles = sorted(vehicle_list, key=repr)
+		return sorted_vehicles
+
+	def list_vehicles_by_identifier(self):
+		vehicle_list = self.list_vehicles()
+		vehicle_list.sort(key=lambda vehicle: vehicle.identifier)
+		return vehicle_list

@@ -1,6 +1,8 @@
 __pycache__/
-bin/*
-obj/*
+src/obj/
+src/bin/
+test/obj/
+test/bin/
 .coverage
 .pytest_cache/
 .venv/
